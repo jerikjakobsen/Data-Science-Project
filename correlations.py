@@ -1,7 +1,8 @@
 import pandas as pd
-
-data = pd.read_csv(
-    '/Users/shah/Documents/Data-Science-Project/CSVFiles/FilteredListing+SaleData.csv', sep=",")
+import sys
+import os
+filePath = sys.path[0] + "/CSVFiles/FilteredListing+SaleData.csv"
+data = pd.read_csv(filePath, sep=",")
 print(data)
 
-df.corr().to_csv(“”)
+data.corr().to_csv("correlations.csv")
