@@ -9,6 +9,12 @@ def prepareSalesData(df):
     df = lowerCaseAllColumns(df)
     df = df.rename(columns={'state':'State', 'property_street_address': 'Address', 'property_city':'City'})
     df['sale_date'] = pd.to_datetime(df['sale_datetime']).dt.date
+    df = df.drop(columns='sale_datetime')
+    df['State'] = df['State'].astype('str')
+    df['City'] = df['City'].astype('str')
+    df['Address'] = df['Address'].astype('str')
     return df
 
-prepareSalesData(salesDataDF).to_csv("FilteredSalesData.csv")
+df = prepareSalesData(salesDataDF)
+print(df.dtypes)
+df.to_csv("FilteredSalesData.csv", index = False)

@@ -10,4 +10,4 @@ def mergeSaleAndTruliaData(sales, trulia):
     dfFiltered = dfFiltered.sort_values('sale_date').drop_duplicates(["Address", "City", "State"], keep='first')
     return dfFiltered
 dfFiltered = mergeSaleAndTruliaData(filteredSalesDF, filteredTruliaDF)
-dfFiltered.to_csv('FilteredListing+SaleData.csv')
+dfFiltered.to_csv('FilteredListing+SaleData.csv', index = False)
