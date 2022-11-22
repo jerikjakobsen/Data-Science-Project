@@ -12,6 +12,7 @@ def prepareTruliaData(df):
     df = convertLotSize(df)
     df['crawl_date'] = pd.to_datetime(df['Crawl Timestamp']).dt.date
     df['listing_date'] = df['crawl_date'] - pd.to_timedelta(df['Days On Trulia'], unit='d')
+    df = df.drop(columns = ['crawl_date', 'Crawl Timestamp'])
     df['State'] = df['State'].astype('str')
     df['City'] = df['City'].astype('str')
     df['Address'] = df['Address'].astype('str')
