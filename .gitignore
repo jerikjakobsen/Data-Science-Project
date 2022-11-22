@@ -3,3 +3,5 @@ CSV Files/AllSalesData.csv
 CSVFiles/AllSalesData.csv
 CSVFiles/FilteredSalesData.csv
 *.pyc
+Data Cleaning/_pycache
+
