@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-filteredTruliaDF = pd.read_csv(os.path.join('..', 'CSVFiles', 'FilteredTruliaData.csv'), index_col=0)
-filteredSalesDF = pd.read_csv(os.path.join('..', 'CSVFiles', 'FilteredSalesData.csv'), index_col=0)
+filteredTruliaDF = pd.read_csv(os.path.join('..', 'CSVFiles', 'FilteredTruliaData.csv'))
+filteredSalesDF = pd.read_csv(os.path.join('..', 'CSVFiles', 'FilteredSalesData.csv'))
 
 def mergeSaleAndTruliaData(sales, trulia):
     dfJoined = sales.merge(trulia, on=["Address", "City", "State"])
