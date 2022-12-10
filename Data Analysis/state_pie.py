@@ -8,3 +8,4 @@ filteredDF.groupby(["State"]).size().plot(kind='pie', y= len(filteredDF), autopc
 
 print(filteredDF.groupby(["State"]).describe())
 print(filteredDF.groupby(["State"]).size())
+print("Cities", filteredDF.groupby(["City"]).size().sort_values(ascending=False))

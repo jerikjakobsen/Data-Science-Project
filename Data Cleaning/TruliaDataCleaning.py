@@ -3,7 +3,7 @@ from HelperFunctions import lowerCaseAllColumns, convertAddresses, convertsqft, 
 import os
 
 TruliaInterestingColumns = ["Crawl Timestamp","Sqr Ft","Longitude","Latitude","Lot Size","Beds","Bath","Year Built","City","State","Address", "Days On Trulia","Zipcode"]
-dfTrulia = pd.read_csv(os.path.join('..', 'CSVFiles', 'trulia_data.csv'))[TruliaInterestingColumns]
+dfTrulia = pd.read_csv('/../CSVFiles/trulia_data.csv')[TruliaInterestingColumns]
 def prepareTruliaData(df):
     df = df.dropna()
     df = lowerCaseAllColumns(df)

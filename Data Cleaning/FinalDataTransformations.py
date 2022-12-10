@@ -23,7 +23,6 @@ SelectedCities = [
 
 dfCities = df[df["City"].isin(SelectedCities)]
 print(len(dfCities))
-#dfCities.to_csv("../CSVFiles/FilteredListing+SaleData.csv", index = False)
 
 dfEncoded = pd.get_dummies(data=dfCities, columns=["City", "State", "day_of_week_listed"])
 dfEncoded = dfEncoded.drop(columns=["Address", "sale_price", "sale_date", "listing_date", "day_of_week"])
